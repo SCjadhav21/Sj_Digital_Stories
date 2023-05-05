@@ -5,7 +5,7 @@ const { Authentication } = require("../Middelware/authentication");
 const { PostModel } = require("../models/post.model");
 
 const PostRouter = express.Router();
-
+PostRouter.use(Authentication);
 PostRouter.get("/", async (req, res) => {
   try {
     const post = await PostModel.find({});

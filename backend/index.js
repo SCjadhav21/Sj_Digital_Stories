@@ -8,7 +8,7 @@ const { PostRouter } = require("./routes/post.routes");
 app.use(express.json());
 app.use(cors());
 
-app.use("/users", UserRouter, (req, res) => {
+app.use("/user", UserRouter, (req, res) => {
   res.send(404);
 });
 
