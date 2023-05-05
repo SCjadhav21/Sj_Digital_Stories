@@ -8,9 +8,9 @@ const { UserModel } = require("../models/user.model");
 const app = express();
 app.use(express.json());
 
-const UserRoutes = express.Router();
+const UserRouter = express.Router();
 
-UserRoutes.post("/register", async (req, res) => {
+UserRouter.post("/register", async (req, res) => {
   let { name, email, mobile, password, address } = req.body;
   try {
     const users = await UserModel.find({ email });
@@ -46,7 +46,7 @@ UserRoutes.post("/register", async (req, res) => {
   }
 });
 
-UserRoutes.post("/login", async (req, res) => {
+UserRouter.post("/login", async (req, res) => {
   const { password, email } = req.body;
   try {
     const user = await UserModel.findOne({ email });
@@ -76,8 +76,8 @@ UserRoutes.post("/login", async (req, res) => {
     res.send({ msg: err, alert: "something went wrong" });
   }
 });
-UserRoutes.use(Authentication);
-UserRoutes.get("/personalDetail", async (req, res) => {
+UserRouter.use(Authentication);
+UserRouter.get("/personalDetail", async (req, res) => {
   const { userId } = req.body;
   try {
     const user = await UserModel.findOne({ _id: userId });
@@ -88,4 +88,4 @@ UserRoutes.get("/personalDetail", async (req, res) => {
   }
 });
 
-module.exports = { UserRoutes };
+module.exports = { UserRouter };
