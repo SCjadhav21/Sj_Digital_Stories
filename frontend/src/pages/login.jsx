@@ -40,7 +40,7 @@ const Login = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
     if (data.email && data.password) {
-      axios("http://localhost:4500/user/login", {
+      axios("https://tan-uptight-oyster.cyclic.app/login", {
         method: "POST",
         data: data,
         headers: {

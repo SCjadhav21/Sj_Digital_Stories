@@ -34,7 +34,7 @@ import { AddContext } from "../context/AppContext";
 const AddPost = (payload, token) => {
   return axios({
     method: "POST",
-    url: "http://localhost:4500/post",
+    url: "https://tan-uptight-oyster.cyclic.app/post",
     data: payload,
     headers: {
       Authorization: token,

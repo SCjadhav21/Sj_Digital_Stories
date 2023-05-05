@@ -11,7 +11,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 const getData = (token) => {
   return axios({
     method: "GET",
-    url: "http://localhost:4500/post",
+    url: "https://tan-uptight-oyster.cyclic.app/post",
     headers: {
       Authorization: token,
     },
@@ -21,7 +21,7 @@ const getData = (token) => {
 const updateLikes = (token, payload) => {
   return axios({
     method: "PATCH",
-    url: `http://localhost:4500/post/${payload._id}`,
+    url: `https://tan-uptight-oyster.cyclic.app/post/${payload._id}`,
     data: payload,
     headers: {
       Authorization: token,
@@ -32,7 +32,7 @@ const updateLikes = (token, payload) => {
 const deletePost = (id, token) => {
   return axios({
     method: "DELETE",
-    url: `http://localhost:4500/post/${id}`,
+    url: `https://tan-uptight-oyster.cyclic.app/post/${id}`,
     headers: {
       Authorization: token,
     },
