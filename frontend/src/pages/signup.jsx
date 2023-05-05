@@ -56,7 +56,7 @@ const Signup = () => {
       } else if (data.mobile.length !== 10) {
         alert("mobile number length should be 10");
       } else {
-        axios("https://tan-uptight-oyster.cyclic.app/register", {
+        axios("https://tan-uptight-oyster.cyclic.app/user/register", {
           method: "POST",
           data: data,
           headers: {
